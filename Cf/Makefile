@@ -3,14 +3,18 @@ CFLAGS= -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -DDEBUG -ggdb3 -fmax-errors
 EXEC=./teste
 NUM= $(shell ls waiting | wc -l)
 c:
-	@$(CC) $(CFLAGS) $(f) -o $(EXEC)
-	@echo "Compilado!"
+	@$(CC) $(CFLAGS) main.cpp -o $(EXEC)
+	@echo "OK!"
 n:
 
-	@echo "Antigo Arquivo número ${NUM}."
+	@echo "File number ${NUM}."
 	@if [ -f main.cpp ]; then mv main.cpp waiting/$(NUM).cpp; fi
 	@cp template.cpp main.cpp
-	@echo "Novo arquivo Gerado!"
+	@echo "New main.cpp file!"
+
+k:
+	@echo $(f) "Solved"
+	@mv main.cpp Solved/$(f);
 
 e:
 	@./$(EXEC)
