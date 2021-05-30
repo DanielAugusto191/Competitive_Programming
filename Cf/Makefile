@@ -14,7 +14,8 @@ n:
 
 k:
 	@echo $(f) "Solved"
-	@mv main.cpp Solved/$(f);
+	@mv main.cpp Solved/"$(f)";
+	@cp template.cpp main.cpp
 
 e:
 	@./$(EXEC)
