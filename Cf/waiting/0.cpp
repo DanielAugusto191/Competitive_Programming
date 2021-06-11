@@ -19,7 +19,7 @@ int dp(int i, int t1, int t2, int f ,int h){
 	if(f < 0 || h < 0) return 0;
 	if(i == n+m) return 1;
 	auto &p = memo[t1][t2][f][h];
-	if(t1 == 0) if(p == -1) return p = dp(i+1, t1, t2-1, k1, h-1); else return p;
+	if(t2 == 0) if(p == -1) return p = dp(i+1, t1, t2-1, k1, h-1); else {cout << "?" << endl;return p;}
 	else if(t2 == 0) if(p == -1)return p = dp(i+1, t1-1, t2, f-1, k2); else return p;
 	else if(p == -1) return p = dp(i+1, t1-1, t2, f-1, k2) + dp(i+1, t1, t2-1, k1, h-1); else return p;
 }
@@ -27,7 +27,7 @@ int dp(int i, int t1, int t2, int f ,int h){
 int main(){_
 	cin >> n >> m >> k1 >> k2;
 	memo.resize(n+1, vector<int>(m+1, vector<int>(k1+1, vector<int>(k2+1, -1))));
-	cout <<  dp(0, n, m, k1, k2) << endl;
+	cout << dp(0, n, m, k1, k2) << endl;
 	exit(0);
 }
 
