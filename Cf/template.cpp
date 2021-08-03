@@ -7,7 +7,7 @@ using namespace std;
 #define pb push_back
 #define f first
 #define s second
-
+int mdc(int a, int b) {return b==0 ? a : mdc(b, a%b);}
 typedef long long ll;
 typedef pair<int, int> ii;
 const int INF = 0x3f3f3f3f;

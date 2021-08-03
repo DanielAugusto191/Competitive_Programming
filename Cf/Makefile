@@ -5,8 +5,8 @@ NUM= $(shell ls waiting | wc -l)
 c:
 	@$(CC) $(CFLAGS) main.cpp -o $(EXEC)
 	@echo "OK!"
-n:
 
+na:
 	@echo "File number ${NUM}."
 	@if [ -f main.cpp ]; then mv main.cpp waiting/$(NUM).cpp; fi
 	@cp template.cpp main.cpp
@@ -14,7 +14,7 @@ n:
 
 k:
 	@echo $(f) "Solved"
-	@mv main.cpp Solved/"$(f)";
+	@mv main.cpp Solved/"$(f).cpp";
 	@cp template.cpp main.cpp
 
 e:

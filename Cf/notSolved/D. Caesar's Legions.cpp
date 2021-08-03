@@ -26,7 +26,7 @@ int dp(int i, int t1, int t2, int f ,int h){
 
 int main(){_
 	cin >> n >> m >> k1 >> k2;
-	memo.resize(n+1, vector<int>(m+1, vector<int>(k1+1, vector<int>(k2+1, -1))));
+	//memo.resize(n+1, vector<int>(m+1, vector<int>(k1+1, vector<int>(k2+1, -1))));
 	cout << dp(0, n, m, k1, k2) << endl;
 	exit(0);
 }
