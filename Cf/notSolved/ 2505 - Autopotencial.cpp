@@ -1,4 +1,4 @@
-// 
+// https://www.urionlinejudge.com.br/judge/pt/problems/view/2505
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -18,9 +18,24 @@ const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main(){
-	#ifdef ONLINE_JUDGE
-          _
-     #endif
+	int n;
+     while(cin>>n){
+          int l = n;
+          string s = to_string(n);
+          int k = pow(10,(int)s.size());
+          l *= l;
+          int c = 2;
+          while(l%k != n){
+               l *= n;
+               c++;
+          }
+          cout << l << endl;
+          cout << c << endl;
+          if(c > n) cout << "NO" << endl;
+          else{
+               if (n%c == 1) cout << "YES" << endl; else cout << "NO" << endl;
+          }
+     }
 	exit(0);
 }
 

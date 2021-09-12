@@ -17,10 +17,26 @@ typedef pair<int, int> ii;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
-int main(){
-	#ifdef ONLINE_JUDGE
-          _
-     #endif
+int main(){_
+	int t;cin>>t;
+     while(t--){
+          int n;cin>>n;
+          int k = 0, c = 0;
+          for(int i=1;k+i<n;i+=2) {k += i;c++;}
+          int atual = k+1;
+          ii pos = {1, c+1};
+          int j = 0;
+          while(atual != n && j < c){
+               atual++;
+               pos.f++;
+               j++;
+          }
+          while(atual != n){
+               atual++;
+               pos.s--;
+          }
+          cout << pos.f << ' ' << pos.s << endl;
+     }
 	exit(0);
 }
 

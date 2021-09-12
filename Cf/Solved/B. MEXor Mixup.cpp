@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/contest/1567/problem/B
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -18,9 +18,20 @@ const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main(){
-	#ifdef ONLINE_JUDGE
+     #ifdef ONLINE_JUDGE
           _
      #endif
+	int t;cin>>t;
+     while(t--){
+          int n;cin>>n;
+          string s;cin>>s;
+          int l=-1,r=-1;
+          for(int i=0;i<n-1;++i) if(s[i] != s[i+1]){
+               l = i+1; r = i+2;
+               break;
+          }
+          cout << l << ' ' << r << endl;
+     }
 	exit(0);
 }
 

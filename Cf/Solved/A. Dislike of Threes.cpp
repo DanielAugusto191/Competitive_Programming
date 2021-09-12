@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/977/problem/F
+// 
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -7,38 +7,29 @@ using namespace std;
 #define pb push_back
 #define f first
 #define s second
+#define dbg(a) cout << a << " -- DEBUG -- "<< endl;
+#define Adbg(a) for(auto e: a){cout << e << ' ';};cout << endl;
+#define all(a) a.begin(),a.end()
+#define read(arr, n) for(int i=0;i<n;++i) cin >> arr[i];
 
 typedef long long ll;
 typedef pair<int, int> ii;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
+vector<int> ans;
 
 int main(){_
-	int n;cin>>n;
-	vector<int> v(n);
-	int m = 0;
-	for(auto &e: v){
-		cin >> e;
-		m = max(m, e);
-	}
-	map<int, int> memo;
-	ii ans = {0, 0};
-	for(int i=n-1;i>=0;i--){
-		memo[v[i]] = memo[v[i]+1] == 0 ? 1 : memo[v[i]+1]+1;
-		if(memo[v[i]] > ans.f){
-			ans.f = memo[v[i]];
-			ans.s = v[i];
-		}
-	}
-	cout << ans.f << endl;	
-	for(int i=0; i<n;++i){
-		if(v[i] == ans.s){
-			cout << i+1 << ' ';
-			ans.s++;
-		}
-	}
-	cout << endl;
-
+     int i = 1;
+     while(ans.size() != 1001){
+          if(i%3 == 0 || i % 10 == 3) {++i;continue;}
+          ans.pb(i);
+          i++;
+     }
+	int t;cin>>t;
+     while(t--){
+          int n;cin>>n;
+          cout << ans[n-1] << endl;
+     }
 	exit(0);
 }
 
@@ -49,4 +40,4 @@ int main(){_
      | |____| |\  | |__| |
      |______|_| \_|_____/ 
 */                        
- 
+

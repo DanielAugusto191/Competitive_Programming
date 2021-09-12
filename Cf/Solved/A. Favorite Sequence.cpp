@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/problemset/problem/1462/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -17,10 +17,19 @@ typedef pair<int, int> ii;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
-int main(){
-	#ifdef ONLINE_JUDGE
-          _
-     #endif
+const int MAX = 1e9;
+vector<int> arr;
+int main(){_
+	int t;cin>>t;
+     while(t--){
+          int n;cin>>n;
+          arr.resize(n);
+          read(arr, n);
+          int l = 0, r = n-1;
+          while(l < r) cout << arr[l] << ' ' << arr[r] << ' ', l++, r--;
+          if(l==r) cout << arr[l];
+          cout << endl;
+     }
 	exit(0);
 }
 

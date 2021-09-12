@@ -17,10 +17,19 @@ typedef pair<int, int> ii;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
-int main(){
-	#ifdef ONLINE_JUDGE
-          _
-     #endif
+int main(){_
+	int t;cin>>t;
+     while(t--){
+          int a,b,c; cin >> a >> b >> c;
+          if(a > b) swap(a,b);
+          int n = (b-a)*2;
+          if((a < n/2 && b < n/2 ) || (a > n/2 && b > n/2) || n < b || n < c) {cout << -1 << endl; continue;}
+          if(c <= n/2){
+               cout << n/2 + c << endl;
+          }else{
+               cout << c - n/2 << endl;    
+          }
+     }
 	exit(0);
 }
 
