@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/43/problem/A
+// https://codeforces.com/contest/1555/problem/C
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -16,29 +16,35 @@ typedef long long ll;
 typedef pair<int, int> ii;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
-
+const int MAX = 1e5 + 10;
+int arr[MAX], arr2[MAX];
 int main(){
-     int n;cin>>n;
-     map<string, int> m;
-     string ans;
-     int cc = -1;
-     while(n--){
-          string s;cin>>s;
-          ++m[s];
-          if(m[s] > cc){
-               cc = m[s];
-               ans = s;
+     int t;cin>>t;
+     while(t--){
+          int n;cin>>n;
+          int s = 0, x = 0;
+          for(int i=0;i<n;++i){
+               cin >> arr[i];
+               s+=arr[i];
           }
+          arr2[0] = 0;
+          for(int i=1;i<n+1;++i) cin >> arr2[i];
+          int ans = s;
+          for(int i=0;i<n;++i) {
+               s -= arr[i];
+               x += arr2[i];
+               ans = min(ans, max(s, x));
+          }
+
+          cout << ans << endl;
      }
-     cout << ans << endl;
 	exit(0);
 }
 
-/*    ______ _   _ _____  
+/*    ______ _   _ _____   1 4 11
      |  ____| \ | |  __ \ 
      | |__  |  \| | |  | |
      |  __| | . ` | |  | |
      | |____| |\  | |__| |
      |______|_| \_|_____/ 
 */                        
-

@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/43/problem/A
+// https://codeforces.com/contest/1521/problem/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -17,20 +17,16 @@ typedef pair<int, int> ii;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
-int main(){
-     int n;cin>>n;
-     map<string, int> m;
-     string ans;
-     int cc = -1;
-     while(n--){
-          string s;cin>>s;
-          ++m[s];
-          if(m[s] > cc){
-               cc = m[s];
-               ans = s;
+int main(){_
+     int t;cin>>t;
+     while(t--){
+          int a,b;cin>>a>>b;
+          if(b==1) cout << "NO" << endl;
+          else{
+               cout << "YES" << endl;
+               cout << a << ' ' << 1LL*a*b << ' ' << 1LL*a*(b+1) << endl;
           }
      }
-     cout << ans << endl;
 	exit(0);
 }
 

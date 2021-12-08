@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/43/problem/A
+// https://codeforces.com/contest/1539/problem/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -18,19 +18,12 @@ const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main(){
-     int n;cin>>n;
-     map<string, int> m;
-     string ans;
-     int cc = -1;
-     while(n--){
-          string s;cin>>s;
-          ++m[s];
-          if(m[s] > cc){
-               cc = m[s];
-               ans = s;
-          }
+     int k;cin>>k;
+     while(k--){
+          int n,x,t;cin>>n>>x>>t;
+          ll ans = 1LL*max(0, n-t/x)*floor(t/x) + 1LL*min(n-1, t/x-1)*min(n, t/x)/2;
+          cout << ans << endl;
      }
-     cout << ans << endl;
 	exit(0);
 }
 

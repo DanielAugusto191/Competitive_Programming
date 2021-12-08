@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/contest/1604/problem/D
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -10,9 +10,15 @@ using namespace std;
 typedef long long ll;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
-const int MAX = 1e9;
 
 int main(){_
-	
+	int t;cin>>t;
+	while(t--){
+		int x,y;cin>>x>>y;
+		if(x > y) {cout << x+y << endl; continue;}
+		int ans = y - y%x;
+		ans = ans+(y-ans)/2;
+		cout << ans << endl;
+	}
 	exit(0);
 }
