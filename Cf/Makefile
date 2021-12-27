@@ -6,6 +6,9 @@ c:
 	@$(CC) $(CFLAGS) main.cpp -o $(EXEC)
 	@echo "OK!"
 
+n:
+	@cp template.cpp main.cpp
+
 na:
 	@echo "File number ${NUM}."
 	@if [ -f main.cpp ]; then mv main.cpp waiting/$(NUM).cpp; fi
