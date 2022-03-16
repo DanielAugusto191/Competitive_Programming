@@ -1,10 +1,21 @@
 CC=g++
 CFLAGS= -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -DDEBUG -ggdb3 -fmax-errors=2 -std=c++17
-EXEC=./teste
+EXEC=./C
 NUM= $(shell ls waiting | wc -l)
+
+RC = rustc
+RFLAGS = -C opt-level=3
+REXEC = ./R
+
 c:
 	@$(CC) $(CFLAGS) main.cpp -o $(EXEC)
 	@echo "OK!"
+
+cts:
+	@tee contest/n{1..10}.cpp <template.cpp > /dev/null
+
+Scts:
+	@mv contest/$(f) Solved/"$(g).cpp";
 
 n:
 	@cp template.cpp main.cpp
@@ -17,7 +28,7 @@ na:
 
 k:
 	@echo $(f) "Solved"
-	@mv main.cpp Solved/"$(f).cpp";
+	@mv main.cpp Solved/C++/"$(f).cpp";
 	@cp template.cpp main.cpp
 
 e:
@@ -29,3 +40,15 @@ ef:
 
 clean:
 	rm -rf $(EXEC)
+	rm -rf R
+
+r:
+	@$(RC) $(RFLAGS) -o $(REXEC) rust/src/main.rs
+	@echo "OK!"
+rk:
+	@echo $(f) "Solved"
+	@mv rust/src/main.rs Solved/Rust/"$(f).rs";
+	@cp template.rs rust/src/main.rs
+
+re:
+	@./$(REXEC);
