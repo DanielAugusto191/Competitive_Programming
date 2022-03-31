@@ -19,7 +19,7 @@ impl Scanner {
         }
     }
 }
-
 fn main() {
+    let mut cin = Scanner::default();
     
 }
