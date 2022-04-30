@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1619/problem/A
+// 
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -10,26 +10,26 @@ using namespace std;
 typedef long long ll;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
-const int MAX = 1e9;
 
+unordered_set<int> s;
 int main(){_
 	int t;cin>>t;
 	while(t--){
-		string s;cin>>s;
-		int n = (int)s.size();
-		if(n & 1) {
-			cout << "NO" << endl;
+		int mm = INF;
+		s.clear();
+		int n;cin>>n;
+		for(int i=0;i<n;++i) {int x;cin>>x;s.insert(x);mm = min(mm, x);}
+		if(s.size() == 1){
+			cout << -1 << endl;
 			continue;
 		}
-		int ans = 1;
-		for(int i=0;i<n/2;++i){
-			if(s[i] != s[n/2 + i]){
-				ans = 0;
-				break;
-			}
-		}
-		cout << (ans? "YES": "NO") << endl;
+		auto is = s.begin();
+		int ans = *is - mm;
+		while(++is != s.end()) if(*is != mm) ans = __gcd(ans, *is-mm);
+		cout << ans << endl;
 
 	}
+	
+
 	exit(0);
 }

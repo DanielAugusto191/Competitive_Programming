@@ -10,18 +10,45 @@ using namespace std;
 typedef long long ll;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
-const int MAX = 1e9;
+string s;
+int n;
+int ab(){
+	int ans = 0;
+	for(int i=0;i<n-1;++i) if(s[i] == 'a' && s[i+1] == 'b') ++ans, ++i;
+	return ans;
+}
+int ba(){
+	int ans = 0;
+	for(int i=0;i<n-1;++i) if(s[i] == 'b' && s[i+1] == 'a') ++ans, ++i;
+	return ans;
+}
+
 
 int main(){_
 	int t;cin>>t;
 	while(t--){
-		int n,k;cin>>n>>k;
-		int arr[n]; for(int i=0;i<n;++i) cin >> arr[i];
-		sort(arr, arr+n);
-		int ans = 0;
-		for(int i=0;i<k;++i) ans += arr[n-2*k+i]/arr[n-k+i];
-		for(int i=0;i<n-2*k;++i) ans += arr[i];
-		cout << ans << endl;
+		cin >> s;
+		n = s.size();
+		int nab = ab(), nba = ba();
+		if(nab == nba) cout << s << endl;
+		else{
+			if(nab > nba){
+				for(int i=0;i<n-1 && nab > nba;++i) if(s[i] == 'a' && s[i+1] == 'b') {
+					s[i] = 'b';
+					--nab;
+				}
+			}else{
+				while(nba < nab){
+					for(int i=n-1;i>0;--i) if(s[i] == 'a' && s[i-1] == 'b') {
+						s[i-1] = 'a';
+						nab = ab();
+						nba = ba();
+						if(nab == nba) break;
+					}
+				}
+			}
+			cout << s << endl;
+		}
 	}
 	exit(0);
 }

@@ -1,13 +1,21 @@
-- Combinatorics
+P1
 - greedy
-- sorting
-- binary search
-- two pointer
-- graphs
-- dfs
-- bfs
+- Binary search
+- Two pointer
+- DP
+- Dfs
+- BitMask
+P2
+- Combinatorics
+- Sorting
+- Graphs
+- Bfs
 - Djasktra
 - DSU
-- DP
 
+
+22/04
+https://codeforces.com/contest/1659/problem/B
+https://codeforces.com/contest/1176/problem/E
+https://codeforces.com/problemset/problem/118/D
 

@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/contest/1660/problem/B
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -15,13 +15,14 @@ const int MAX = 1e9;
 int main(){_
 	int t;cin>>t;
 	while(t--){
-		int n,k;cin>>n>>k;
-		int arr[n]; for(int i=0;i<n;++i) cin >> arr[i];
-		sort(arr, arr+n);
-		int ans = 0;
-		for(int i=0;i<k;++i) ans += arr[n-2*k+i]/arr[n-k+i];
-		for(int i=0;i<n-2*k;++i) ans += arr[i];
-		cout << ans << endl;
-	}
+		int n;cin>>n;
+		int arr[n];
+		for(auto &e: arr) cin >> e;
+		if(n == 1) {if(arr[0] == 1) cout << "YES" << endl; else cout << "NO" << endl;}
+		else{
+			sort(arr, arr+n);
+			cout << ((arr[n-1] - arr[n-2] >= 2)? "NO":"YES") << endl;
+		}
+	}	
 	exit(0);
 }

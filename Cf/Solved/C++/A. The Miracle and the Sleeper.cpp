@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1562/problem/A
+// https://codeforces.com/contest/1562/problem/A 
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -6,35 +6,21 @@ using namespace std;
 #define endl '\n'
 #define dbg(a) cout << a << " -- DEBUG -- "<< endl;
 #define Adbg(a) for(auto e: a){cout << e << ' ';};cout << endl;
+#define Mdbg(a) for(auto e: a){cout << e.first << ' ' e.second;};cout << endl;
 
 typedef long long ll;
+typedef pair<int,int> ii;
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
+const int MAX = 2e5 + 10;
+
+int a[MAX], b[MAX];
 
 int main(){_
-     int t;cin>>t;
-     while(t--){
-          int a, b,l, r; cin >> a >> b;
-          l = a; r = b;
-          if(2*a-1 > r){
-               cout << r%l << endl;
-               continue;
-          }
-          while(l+1 < r){
-               int m = (l+r)/2;
-               if(2*m-1 <= b) l = m;else  r = m;
-          }
-          cout << l-1 << endl;
-
-     }
+	int t;cin>>t;
+	while(t--){
+		int l,r;cin>>l>>r;
+		cout << ((r/2+1 >= l)? r%(r/2+1):r%l) << endl;
+	}
 	exit(0);
 }
-
-/*    ______ _   _ _____  
-     |  ____| \ | |  __ \ 
-     | |__  |  \| | |  | |
-     |  __| | . ` | |  | |
-     | |____| |\  | |__| |
-     |______|_| \_|_____/ 
-*/                        
-
