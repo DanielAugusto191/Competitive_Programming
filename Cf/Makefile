@@ -29,6 +29,10 @@ na:
 	@if [ -f main.cpp ]; then mv main.cpp waiting/$(NUM).cpp; fi
 	@cp template.cpp main.cpp
 	@echo "New main.cpp file!"
+b:
+	@rm main.cpp
+	@mv waiting/$(n).cpp main.cpp;
+	@echo "File $(n) on main"
 
 k:
 	@echo $(f) "Solved"
