@@ -22,7 +22,6 @@ int main(){_
      int t;cin>>t;
      while(t--){
           cin>>n>>m>>k;
-          if(n%2 == 1 && m%2 == 1) cout << "NO" << endl;
           if(m == 3){
                if(k <= n && k%2==0) cout << "YES" << endl;
                else cout << "NO" << endl;

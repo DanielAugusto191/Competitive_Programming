@@ -13,8 +13,8 @@ void dfs(int v){ // O(V)
 int bfs(){ // O(ELog(V))
     priority_queue<int> q;
 	q.push(0);
-    	vis[0] = true;
-    	while(!q.empty()) {
+	vis[0] = true;
+	while(!q.empty()) {
 		int l = -q.top(); q.pop();
 		vis[l] = true;
 		for(auto &e: G[l]) if(!vis[e]) q.push(-e), vis[e] = true;
