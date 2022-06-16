@@ -15,7 +15,6 @@ const int MAX = 1e9;
 int main(){_
 	int p2[30];
 	for(int i=0;i<30;++i) p2[i] = (1<<(i+1))-1;
-	Adbg(p2);
 	int t;cin>>t;
 	while(t--){
 		int n;cin>>n;
@@ -25,19 +24,19 @@ int main(){_
 			if(arr[i] < arr[i-1]){
 				ll k = -1;
 				for(int j=0;j<30;++j){
-				 if(p2[j] >= arr[i-1]-arr[i]){
-					k = j+1;
-					arr[i] += p2[j];
-					break;
-				 }	
+					if(p2[j] >= arr[i-1]-arr[i]){
+						k = j+1;
+						arr[i] += p2[j];
+						break;
+					}	
 				}
 				if(k==-1) k = 31;
-				cout << k << " - ";
-				for(int j=0;j<k;++j) if(arr[i] - p2[j] >= arr[i-1]) arr[i] -= p2[j], dbg(j); else break;
-				cout << endl;
+				cout << k << ' ';
+				for(int j=0;j<k;++j) if(arr[i] - p2[j] >= arr[i-1]) arr[i] -= p2[j]; else break;
 				ans = max(ans, k);
 			}
 		}
+		cout << endl;
 		for(auto e: arr) cout << e << ' ';
 		cout << endl;
 		cout << ans << endl;

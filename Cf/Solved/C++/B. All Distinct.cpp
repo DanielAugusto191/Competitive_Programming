@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1176/problem/C
+// https://codeforces.com/contest/1692/problem/B
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -16,20 +16,19 @@ const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e9;
 
-
 int main(){_
-	int n;cin >> n;
-	map<int,int> m;
-	m[4] = 0;
-	m[8] = 0;
-	m[15] = 0;
-	m[16] = 0;
-	m[23] = 0;
-	m[42] = 0;
-	int arr[n]; for(auto &e: arr) cin >> e, ++m[e];
-	int k = INF;
-	for(auto e: m) cout << e.first << ' ' << e.second << endl;
-	for(auto e: m) k = min(k, e.second);
-	cout << n - 6 * k << endl;
+	int t;cin>>t;
+	while(t--){
+		int n;cin>>n;
+		map<int,int> m;
+		for(int i=0;i<n;++i){
+			int a;cin>>a;
+			++m[a];
+		}
+		int np = 0;
+		for(auto &e: m) if(e.second%2==0) np++;
+		cout << m.size()-(np%2) << endl;
+
+	}
 	exit(0);
 }

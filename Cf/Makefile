@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS= -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -DDEBUG -ggdb3 -fmax-errors=2 -std=c++20
 EXEC=./C
-NUM= $(shell ls waiting | wc -l)
+NUM=$(shell ls waiting/ | wc -l)
 
 RC = rustc
 RFLAGS = -C opt-level=3
