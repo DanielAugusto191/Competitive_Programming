@@ -8,7 +8,7 @@ RFLAGS = -C opt-level=3
 REXEC = ./R
 
 c:
-	@$(CC) main.cpp -o $(EXEC)
+	@$(CC) $(CFLAGS) main.cpp -o $(EXEC)
 	@echo "OK!"
 
 cts:

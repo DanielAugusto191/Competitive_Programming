@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/contest/1699/problem/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -16,6 +16,18 @@ const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e9;
 
-int main(){_
-	
+int main(){
+	int t;cin>>t;
+	while(t--){
+		int n;cin>>n;
+		if(n%2==0) cout << 0 << ' ' << 0 << ' ' << n/2 << endl;
+		else cout << -1 << endl;;
+	}
+	exit(0);
 }
+
+/*
+
+	1 ^ A = x/2
+
+*/
