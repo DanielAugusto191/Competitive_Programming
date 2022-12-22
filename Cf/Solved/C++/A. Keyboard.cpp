@@ -16,8 +16,19 @@ const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e9;
 
-int main(){_
+int main(){
+	string v = "qwertyuiopasdfghjkl;zxcvbnm,./";
+	int n = v.size();
+	char c; cin >> c;
+	int s = (c=='R') ? -1 : 1;
+	string k; cin >> k;
+	string ans = "";
+	for(auto &e: k){
+		for(int i=0;i<n;++i){
+			if (v[i] == e){
+				ans += v[i+s]; 
+			}
+		}
+	}
+	cout << ans << endl;
 }
-
-// 5 5
-// 1 2 4 5 _

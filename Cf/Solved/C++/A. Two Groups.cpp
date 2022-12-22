@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/contest/1747/problem/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -14,10 +14,18 @@ typedef pair<ll,ll> pll;
 
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
-const int MAX = 1e9;
+const int MAX = 2e5 + 10;
 
 int main(){_
+	int t;cin>>t;
+	while(t--){
+		int n;cin>>n;
+		ll s = 0;
+		for(int i=0;i<n;++i){
+			int a;cin>>a;
+			s += a;
+		}
+		cout << abs(s) << endl;
+	}
+	exit(0);
 }
-
-// 5 5
-// 1 2 4 5 _

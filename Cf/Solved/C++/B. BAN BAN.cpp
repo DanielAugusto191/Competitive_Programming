@@ -17,7 +17,24 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e9;
 
 int main(){_
+	int t;cin>>t;
+	while(t--){
+		int n;cin>>n;
+		int ans = n/2 + n%2;
+		cout << ans << endl;
+		int i = 0;
+		int l = n/2;
+		int k = l*3;
+		for(;i<l;++i) cout << 3*i + 1<< ' ' << k + 3*i + 2 << endl;
+		if(n%2)	cout << k + 3*i + 1 << ' ' << k + 3*i + 1 + 2 << endl;
+	}
+	exit(0);
 }
-
-// 5 5
-// 1 2 4 5 _
+/*
+BANBANBAN
+BABNABBNA
+BANBANBAN | BANBANBAN | BAN  ->
+AANAANAAN | BBNBBNBBN | 
+BAN | BAN | BAN
+AAN | BBN | NAB
+*/

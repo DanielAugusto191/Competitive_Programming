@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/problemset/problem/1476/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -17,7 +17,12 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e9;
 
 int main(){_
+	int t;cin>>t;
+	while(t--){
+		int n,m;cin>>n>>m;
+		if(n%m == 0) cout << 1 << endl;
+		else if(n > m) cout << 2 << endl;
+		else cout << m/n + (m%n != 0) << endl;
+	}
+	exit(0);
 }
-
-// 5 5
-// 1 2 4 5 _

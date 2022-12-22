@@ -17,7 +17,24 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e9;
 
 int main(){_
-}
+	int n;cin>>n;
+	string s; cin >> s;
+	unordered_map<string, int> m;
+	for(int i=0;i<n-1;++i){
+		string k = "";
+		k += s[i];
+		k += s[i+1];
+		m[k]++;
+	}
+	int mm = -INF;
+	string ans;
+	for(auto &e: m){
+		if(e.second > mm){
+			mm = e.second;
+			ans = e.first;
+		} 
+	}
+	cout << ans << endl;
 
-// 5 5
-// 1 2 4 5 _
+	exit(0);
+}

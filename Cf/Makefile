@@ -51,7 +51,7 @@ r:
 	@$(RC) $(RFLAGS) -o $(REXEC) rust/src/main.rs
 	@echo "OK!"
 rk:
-	@echo $(f) "Solved"
+	@echo $(f) "Solved"q
 	@mv rust/src/main.rs Solved/Rust/"$(f).rs";
 	@cp template.rs rust/src/main.rs
 
