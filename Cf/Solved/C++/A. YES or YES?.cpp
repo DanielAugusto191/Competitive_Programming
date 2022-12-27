@@ -1,4 +1,4 @@
-// https://codeforces.com/problemset/problem/1669/A
+// https://codeforces.com/contest/1703/problem/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -19,13 +19,9 @@ const int MAX = 1e9;
 int main(){_
 	int t;cin>>t;
 	while(t--){
-		int x;cin>>x;
-		cout << "Division ";
-		if(1900 <= x) cout << "1";
-		else if(1600 <= x) cout << "2";
-		else if(1400 <= x) cout << "3";
-		else cout << "4";
-		cout << endl;
+		string s;cin>>s;
+		if((s[0] == 'Y'|| s[0]=='y') && (s[1] == 'E'|| s[1]=='e') && (s[2] == 'S'|| s[2]=='s') ) cout << "YES" << endl;
+		else cout << "NO" << endl;
 	}
 	exit(0);
 }
