@@ -17,4 +17,4 @@ New File, with solved main.cpp: make k f="{problem name}" (the solved problems g
 
 TODO:
 - [ ] Order problems by Tags.
-- [ ] Add link reference to all problems.
+- [X] Add link reference to all problems.
