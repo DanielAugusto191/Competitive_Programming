@@ -4,6 +4,14 @@ const int MAX = 100;
 
 vector<int> vis(100);
 vector<vector<int> > G(100);
+/*
+BFS 
+DFS 
+BellmanFord
+FloydWarshall
+
+*/
+
 
 void dfs(int v){ // O(V)
     if(vis[v]) return;
@@ -20,6 +28,8 @@ int bfs(){ // O(ELog(V))
 		for(auto &e: G[l]) if(!vis[e]) q.push(-e), vis[e] = true;
 	}
 }
+
+
 
 void floydWarshall(int n){ // O(V³)
 	for(int k=0;k<n;++k) for(int i=0;i<n;++i) for(int j=0;j<n;++j) G[i][j] = min(G[i][j], G[i][k] + G[k][j]);

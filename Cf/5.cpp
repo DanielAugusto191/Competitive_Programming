@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1768/problem/C
+// 
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -28,14 +28,6 @@ int main(){_
 		vector<int> a(n,0),b(n,0),c(n,0);
 		unordered_map<int,int> vis, bi, ci;
 		for(int i=0;i<n;++i) cin >> a[i];
-		//if(n==1){
-		//	if(a[0] == 1){
-		//		cout << "YES" << endl;
-		//		cout << 1 << endl;
-		//		cout << 1 << endl;
-		//	}else cout << "NO" << endl;
-		//	continue;
-		//}
 		int ans = 1;
 		for(int i=0;i<n;++i){
 			if(vis[a[i]] == 2){
@@ -51,6 +43,7 @@ int main(){_
 			}
 			vis[a[i]]++;
 		}
+		int l = 0;
 		if(!ans || vis[1] > 1) cout << "NO" << endl;
 		else {
 			cout << "YES" << endl;
