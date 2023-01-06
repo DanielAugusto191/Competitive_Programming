@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1768/problem/C
+// https://codeforces.com/problemset/problem/1766/C
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -14,61 +14,49 @@ typedef pair<ll,ll> pll;
 
 const int INF = 0x3f3f3f3f;
 const ll LINF = 0x3f3f3f3f3f3f3f3fll;
-const int MAX = 2e5;
+const int MAX = 2e5+10;
 
-
-int main(){_
-// 5 3 4 2 1
-// 4 2 3 1 5
-
-// 5 3 4 2 5
-	int t;cin>>t;
-	while(t--){
-		int n;cin>>n;
-		vector<int> a(n,0),b(n,0),c(n,0);
-		unordered_map<int,int> vis, bi, ci;
-		for(int i=0;i<n;++i) cin >> a[i];
-		//if(n==1){
-		//	if(a[0] == 1){
-		//		cout << "YES" << endl;
-		//		cout << 1 << endl;
-		//		cout << 1 << endl;
-		//	}else cout << "NO" << endl;
-		//	continue;
-		//}
-		int ans = 1;
-		for(int i=0;i<n;++i){
-			if(vis[a[i]] == 2){
-				ans = 0;
-				break;
-			}else if(vis[a[i]] == 1){
-				c[i] = a[i];
-				ci[c[i]] = i;
-			}
-			else{
-				b[i] = a[i];
-				bi[b[i]] = i;
-			}
-			vis[a[i]]++;
-		}
-		if(!ans || vis[1] > 1) cout << "NO" << endl;
-		else {
-			cout << "YES" << endl;
-			int lv2 = -1;
-			for(int i=0;i<n;++i){
-				if(vis[n-i] == 2) {lv2 = i;continue;}
-				else if(vis[n-i] == 1){
-					c[bi[n-i]] = n-i;
-				}else{
-					b[ci[n-lv2]] = n-i;
-					c[bi[n-lv2]] = n-i;
+int n;
+char arr[2][MAX];
+bool memo[2][MAX];
+bool vis[2][MAX];
+pii dx[3] = {{1, 0}, {-1, 0}, {0, 1}};
+bool dp(int i,int j){
+	if(memo[i][j]) return memo[i][j];
+	if(arr[i][j] == 'W') return false;
+	vis[i][j] = true;
+	bool ans = false;
+	for (auto &e: dx) if(e.first+i >=0 && e.first+i < 2 && !vis[e.first+i][e.second+j]) {
+		if(e.second+j == n) ans =true;
+		else{
+			if(arr[e.first+i][e.second+j] == 'B'){ 
+				if(dp(e.first+i, e.second+j) == 0){
+					ans = false; break;
+				} else{
+					
 				}
-			}
-			for(auto &e: b) cout << e << ' ';
-			cout << endl;
-			for(auto &e: c) cout << e << ' ';
-			cout << endl;
 		}
 	}
+	return memo[i][j] = ans;
+}
+
+int main(){
+	int t;cin>>t;
+	while(t--){
+		cin>>n;
+		for(int i=0;i<n;++i) cin >> arr[0][i];
+		for(int i=0;i<n;++i) cin >> arr[1][i];
+		cout << ((dp(0, 0) || dp(1, 0))?"YES":"NO") << endl;
+		for(int i=0;i<n;++i) cout << vis[0][i];
+		cout << endl;
+		for(int i=0;i<n;++i) cout << vis[1][i];
+		cout << endl;
+	}
+	/*
+	BWBWBBWBWB
+	BBBBBBBBBB 
+	BWBWBBWBWB
+	BBBBBBBBBB
+	 * */
 	exit(0);
 }
