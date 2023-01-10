@@ -17,6 +17,12 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 const int MAX = 1e9;
 
 int main(){_
+	int t;cin>>t;
+	while(t--){
 
+	}
 	exit(0);
 }
+/*
+
+*/
