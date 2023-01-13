@@ -1,4 +1,4 @@
-// 
+//https://codeforces.com/contest/1670/problem/B
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -19,7 +19,21 @@ const int MAX = 1e9;
 int main(){_
 	int t;cin>>t;
 	while(t--){
-		bool x =( 1 != 2);
+		int n;cin>>n;
+		string s;cin>>s;
+		int k;cin >> k;unordered_map<char,int> m;
+		for(int i=0;i<k;++i) {char a; cin >> a; m[a] = 1;}
+		int antv = 0, ans = 0, c = 0;
+		for(int i=0;i<n;++i){
+			if(m[s[i]]){
+				ans = max(ans,(i-antv+c));
+				c = 1;
+				antv = i+1;
+			}
+		}
+		cout << ans << endl;
+
+
 	}
 	exit(0);
 }
