@@ -1,0 +1,62 @@
+// 
+#include <bits/stdc++.h>
+using namespace std;
+#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+
+#define endl '\n'
+#define dbg(a) cout << a << " -- DEBUG -- "<< endl;
+#define Adbg(a) for(auto e: a){cout << e << ' ';};cout << endl;
+#define Mdbg(a) for(auto e: a){cout << e.first << ' ' <<  e.second;cout << endl;}
+
+typedef long long ll;
+typedef pair<int,int> pii;
+typedef pair<ll,ll> pll;
+
+const int INF = 0x3f3f3f3f;
+const ll LINF = 0x3f3f3f3f3f3f3f3fll;
+const int MOD = (int)1e9 + 7;
+const int MAX = 1e9;
+
+struct fac{
+	private:
+		int MOD = (int)1e9+7;
+		int lc;
+		vector<int> precomp;
+	public:
+		fac(int x) {
+			lc = 0;
+			precomp.resize(x, -1);
+			precomp[0] = 1;
+		}
+		void fact(int k) {
+			for(int i=lc+1;i<=k;++i) precomp[i] = ((precomp[i-1]%MOD)*1LL*(i%MOD))%MOD; 
+			lc = k;
+		}
+		int comp(int k) {
+			if(k < 0) return -1;
+			else if(precomp[k] == -1) fact(k);
+			return precomp[k];
+		}
+		void print_range(int x, int y){
+			for(int i=x;i<y;++i) cout << precomp[i] << ' ';
+			cout << endl;
+		}
+		int get_last_computed(){
+			return lc;
+		}
+};
+
+int main(){
+	fac myFac(1000);
+	int n,k; cin >> n >> k;
+	int a =	myFac.comp(n);
+	cout << a << endl;
+	myFac.print_range(0, k);
+	a = myFac.comp(k);
+	cout << a << endl;
+	myFac.print_range(0, k);
+	exit(0);
+}
+/*
+
+*/
