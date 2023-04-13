@@ -1,0 +1,17 @@
+-- Set 1 --
+	-- 1.1
+		Implementation
+		Math
+		Greedy
+	-- 1.2
+		String
+		Sorting
+		Combinatorics
+		Number Theory
+	-- Set 2 --
+		Graphs
+		DP
+		SegTree
+
+Math, Sorting, greedy, two pointers, implementation, data structes, BS, number theory, bit, basic combinatorics
+
