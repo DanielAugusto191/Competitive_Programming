@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/contest/1872/problem/A
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -18,12 +18,16 @@ const int MOD = (int)1e9 + 7;
 const int MAX = 1e9;
 
 int main(){_
-	cout << (5 << 2 | 1) << endl;
+	int t;cin>>t;
+	while(t--){
+		int a1,b1,c;cin>>a1>>b1>>c;
+		int a = max(a1,b1);
+		int b = min(a1,b1);
+		int ans = ceil(((a-b)*1.0)/(2.0*c));
+		cout << ans << endl;
+	}
 	exit(0);
 }
 /*
-[1, 5]
-X-2 > 0
-2 + P
-is there an even number, say X, that can be writen as 2 + P such as P%2==0 and P >= 2.
+
 */
