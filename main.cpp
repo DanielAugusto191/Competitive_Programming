@@ -25,9 +25,3 @@ int main(){_
 	}
 	exit(0);
 }
-/*
-[1, 5]
-X-2 > 0
-2 + P
-is there an even number, say X, that can be writen as 2 + P such as P%2==0 and P >= 2.
-*/
