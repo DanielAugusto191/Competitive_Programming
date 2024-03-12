@@ -7,6 +7,7 @@ using namespace std;
 #define dbg(a) cout << a << " -- DEBUG -- "<< endl;
 #define Adbg(a) for(auto e: a){cout << e << ' ';};cout << endl;
 #define Mdbg(a) for(auto e: a){cout << e.first << ' ' <<  e.second;cout << endl;}
+#define all(a) a.begin(),a.end()
 
 typedef long long ll;
 typedef pair<int,int> pii;
@@ -18,7 +19,10 @@ const int MOD = (int)1e9 + 7;
 const int MAX = 1e9;
 
 int main(){_
-	cout << (5 << 2 | 1) << endl;
+	int t;cin>>t;
+	while(t--){
+		
+	}
 	exit(0);
 }
 /*

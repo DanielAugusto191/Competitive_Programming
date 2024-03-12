@@ -1,4 +1,4 @@
-// 
+// https://codeforces.com/contest/1899/problem/E
 #include <bits/stdc++.h>
 using namespace std;
 #define _ ios_base::sync_with_stdio(0);cin.tie(0);
@@ -7,7 +7,6 @@ using namespace std;
 #define dbg(a) cout << a << " -- DEBUG -- "<< endl;
 #define Adbg(a) for(auto e: a){cout << e << ' ';};cout << endl;
 #define Mdbg(a) for(auto e: a){cout << e.first << ' ' <<  e.second;cout << endl;}
-#define all(a) a.begin(),a.end()
 
 typedef long long ll;
 typedef pair<int,int> pii;
@@ -21,6 +20,15 @@ const int MAX = 1e9;
 int main(){_
 	int t;cin>>t;
 	while(t--){
+		int n;cin >> n;
+		int arr[n];for(auto &e: arr) cin >> e;
+		int mm = INF;
+		int k = -1;
+		for(int i=0;i<n;++i) if(arr[i] < mm) mm = arr[i], k = i;
+		int c = 1;
+		for(int i=k+1;i<n;++i) if(arr[i] < arr[i-1]) {c=0;break;}
+		cout << (c? k:-1) << endl;
+
 	}
 	exit(0);
 }
